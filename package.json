@@ -1,0 +1,36 @@
+{
+  "name": "short-link",
+  "module": "src/index.ts",
+  "version": "0.4.0",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "bun-types": "latest",
+    "daisyui": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "dev": "bun run tailwind:dev | bun run elxsia:dev",
+    "elxsia:dev": "bun --watch src/index.ts",
+    "prettier": "bunx prettier . --write",
+    "build": "bun run tailwind:build",
+    "start": "bun run src/index.ts",
+    "tailwind:build": "bunx tailwindcss -i ./src/style.css -o ./public/style.css --minify",
+    "tailwind:dev": "bunx tailwindcss -i ./src/style.css -o ./public/style.css --watch"
+  },
+  "type": "module",
+  "dependencies": {
+    "@elysiajs/html": "~0.7.0",
+    "@elysiajs/static": "~0.7.1",
+    "elysia": "~0.7.15",
+    "elysia-autoroutes": "~0.4.0",
+    "handlebars": "^4.7.8",
+    "htmx.org": "^1.9.6"
+  }
+}
